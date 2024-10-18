@@ -1,4 +1,7 @@
 #!/bin/bash
+# Installing mysql apt config
+curl https://dev.mysql.com/get/mysql-apt-config_0.8.33-1_all.deb -o /tmp/mysql-apt-config.deb
+sudo dpkg -i /tmp/mysql-apt-config.deb
 sudo apt update
 sudo apt install $(cat $PWD/apt-packages) -y
 [ "$SHELL" != "/bin/zsh" ] && chsh -s /bin/zsh && cp $HOME/.bash_history $HOME/.zsh_history
